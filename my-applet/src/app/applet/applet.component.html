@@ -1,0 +1,14 @@
+<!-- Class-Binding -->
+<button class = "Btn btn-primary" [class.active] = "isActive"> Submit </button>
+<br><br>
+
+<!-- style-binding -->
+<button class = "Btn btn-primary" [style.background] = "isActive ? 'blue' : 'gray'">Submit</button>
+<br><br>
+
+<!-- Event-Binding -->
+<button (click) = "onClick()"> Submit </button><button on-click = "onClick()">Submit</button>
+<br><br>
+
+<!-- property-Binding -->
+<button [disabled] = "buttonDisabled" (click) = "onClick()">Applet</button>

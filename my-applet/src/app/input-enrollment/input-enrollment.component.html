@@ -1,0 +1,19 @@
+<h1>Enrollment Form</h1>
+Name: <input type = "text" [(ngModel)] = "name" /><br>
+Enrolled? <input type = "checkbox" [(ngModel)] = "status"/><br>
+Gender: <select type = "dropdown" [(ngModel)] = "gender">
+    <option value = "Male">Male</option>
+    <option value = "Female">Female</option>
+</select><br>
+<button (click) = "onClick(name,status,gender)">Send</button>
+<h4 *ngIf = "receiveData">Notification: {{receiveData}}</h4>
+<br><br>
+<h2>List of Declined Enrollments</h2>
+<ul>
+    <li *ngFor = "let decline of declined ">
+        Name: {{decline.name}}<br>
+        Status: {{decline.status}}<br>
+        Gender: {{decline.gender}}
+    </li>
+</ul>
+<app-output-enrollment (receiveEvent) = "receiveData = $event" (declinedEvent) = "addDecline()" [userName] = "reply1" [userGender] = "reply2" [userEnroll] = "reply3"></app-output-enrollment>

@@ -1,0 +1,27 @@
+<h1>Template Driven Form</h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" [hidden]="isDisplayed">
+    Name: <input type="text" name="name" #name="ngModel" required ngModel /><br>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">Name is required.</div>
+    </div>
+    Email: <input type="email" name="email" #email="ngModel" required ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/><br>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">Email is required.</div>
+            <div *ngIf="email.errors?.pattern">Check your email.</div>
+        </div>
+    Gender: <select type="dropdown" name="gender" #gender="ngModel" required ngModel>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+            <div *ngIf="gender.errors.required">Gender is required.</div>
+        </div>
+    <input type="submit" value="Submit" [disabled]="!f.valid">
+</form>
+<div [hidden]="isHidden">
+    <h2>Data:</h2>
+    <p>Name: {{formValue.name}}</p>
+    <p>Email: {{formValue.email}}</p>
+    <p>Gender: {{formValue.gender}}</p>
+    <input type="submit" value="Edit" (click) = "onClick()">
+</div>

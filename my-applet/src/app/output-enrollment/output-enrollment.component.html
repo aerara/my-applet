@@ -1,0 +1,15 @@
+<h1>Enrollment Approval</h1>
+<h4>Name: {{userName}}</h4>
+<h4>Gender: {{userGender}}</h4>
+<h4>Status of Enrollment: {{userEnroll}}</h4>
+<h3>{{ app }}</h3>
+<button (click) = "onClick(app)">Approve</button>
+<button (click) = "onTap(app)">Disapprove</button><br>
+<h2>List of Accepted Enrollments</h2>
+<ul>
+    <li *ngFor = "let student of enrollee ">
+        Name: {{student.name}}<br>
+        Status: {{student.status}}<br>
+        Gender: {{student.gender}} 
+    </li>
+ </ul>
