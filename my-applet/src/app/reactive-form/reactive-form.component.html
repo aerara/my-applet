@@ -2,7 +2,7 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
     Firstname: <input type="text" name="firstname" formControlName="firstname" required ngModel /><br>
     Lastname: <input type="text" name="lastname" formControlName="lastname" required ngModel /><br>
-    Email: <input type="email" name="email" formControlName="email" required ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /><br>
+    Email: <input type="email" name="mail" formControlName="email" required ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /><br>
     <h3>Address</h3>
     Street: <input type="text" name="street" formControlName="street" required ngModel /><br>
     City: <input type="text" name="city" formControlName="city" required ngModel /><br>
@@ -12,13 +12,14 @@
 </form>
 <div [hidden]="isHidden">
     <h3>Data and Information</h3>
-    <p>Firstname: {{formValue.firstname}}<br>
-        Lastname: {{formValue.lastname}}<br>
-        Email: {{formValue.email}}<br><br>
-        <b>Address</b><br>
-        Street: {{formValue.street}}<br>
-        City: {{formValue.city}}<br>
-        State: {{formValue.state}}<br>
-        Zip Code: {{formValue.zipcode}}
+    {{formValue | json}}
+    <!-- <b>Lastname:</b> {{formValue.firstname}}<br>
+    <b>Lastname:</b> {{formValue.lastname}}<br>
+    <b>Email:</b> {{formValue.email}}<br><br>
+    <b>Address</b><br>
+    <b>Street:</b> {{formValue.street}}<br>
+    <b>City:</b> {{formValue.city}}<br>
+    <b>State:</b> {{formValue.state}}<br>
+    <b>Zip Code:</b> {{formValue.zipcode}} -->
     </p>
 </div>

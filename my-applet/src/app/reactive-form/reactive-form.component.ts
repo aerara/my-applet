@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
+
 export class ReactiveFormComponent implements OnInit {
   contactForm: FormGroup;
   isHidden = true;
@@ -18,7 +19,7 @@ export class ReactiveFormComponent implements OnInit {
       'street': new FormControl('', [Validators.required, Validators.minLength(1)]),
       'city': new FormControl('', [Validators.required, Validators.minLength(1)]),
       'state': new FormControl('', [Validators.required, Validators.minLength(1)]),
-      'zipcode': new FormControl('', [Validators.required, Validators.minLength(1)]),
+      'zipcode': new FormControl('', [Validators.required, Validators.minLength(1)])
     })
   }
 

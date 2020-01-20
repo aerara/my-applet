@@ -10,7 +10,7 @@ Gender: <select type = "dropdown" [(ngModel)] = "gender">
 <br><br>
 <h2>List of Declined Enrollments</h2>
 <ul>
-    <li *ngFor = "let decline of declined ">
+    <li *ngFor = "let decline of declined">
         Name: {{decline.name}}<br>
         Status: {{decline.status}}<br>
         Gender: {{decline.gender}}
